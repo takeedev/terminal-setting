@@ -1,0 +1,2 @@
+# terminal-setting
+terminal setting
