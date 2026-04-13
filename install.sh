@@ -49,4 +49,6 @@ echo 'source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
 grep -qxF 'eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/M365Princess.omp.json')"' ~/.zshrc || \
 echo 'eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/M365Princess.omp.json')"' >> ~/.zshrc
 
+echo '------------------------check zshrc file---------------------------'
+cat ~/.zshrc
 echo "Setup complete! and Restart terminal"
