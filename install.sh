@@ -13,13 +13,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 
   brew update
-  brew install zsh git curl unzip fzf
+  brew install zsh git curl unzip fzf zsh-autosuggestions zsh-syntax-highlighting
 
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "Linux"
 
   sudo apt update
-  sudo apt install -y zsh git curl unzip fzf
+  sudo apt install -y zsh git curl unzip fzf zsh-autosuggestions zsh-syntax-highlighting
 
 fi
 
@@ -37,11 +37,16 @@ if ! command -v oh-my-posh &> /dev/null; then
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
+# syntax highlight
+grep -qxF 'source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ~/.zshrc || \
+echo 'source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
+
+# auto suggestions
+grep -qxF 'source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh' ~/.zshrc || \
+echo 'source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+
 # add oh-my-posh config
 grep -qxF 'eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/M365Princess.omp.json')"' ~/.zshrc || \
 echo 'eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/M365Princess.omp.json')"' >> ~/.zshrc
-
-# fzf setup
-[ -f ~/.fzf.zsh ] || ~/.fzf/install --all
 
 echo "Setup complete! and Restart terminal"
