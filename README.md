@@ -2,7 +2,7 @@
 
 ### Install
 ```text
-zsh git curl unzip fzf
+zsh git curl unzip fzf zsh-autosuggestions zsh-syntax-highlighting
 ```
 
 ### Install command
