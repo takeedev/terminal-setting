@@ -5,7 +5,6 @@ echo "Start setup"
 # detect OS
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "mac"
-
   # check brew
   if ! command -v brew &> /dev/null; then
     echo "Installing Homebrew"
@@ -17,7 +16,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   echo "Linux"
-
   sudo apt update
   sudo apt install -y zsh git curl unzip fzf zsh-autosuggestions zsh-syntax-highlighting
 
@@ -25,6 +23,7 @@ fi
 
 # install mise
 if [ ! -f "$HOME/.local/bin/mise" ]; then
+  echo 'install mise en place'
   curl https://mise.run | sh
 fi
 
