@@ -1,4 +1,4 @@
-# terminal-setting
+# Terminal-Setting
 
 Setup script for a zsh-based terminal environment on macOS and Debian/Ubuntu Linux.
 
